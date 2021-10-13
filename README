@@ -48,5 +48,6 @@ found in datasets.py.
 
 The code was modified and superficially refactored in preparation for
 releasing to the public. The simulations haven't been thoroughly tested after
-this refactoring so it's not 100% guaranteed that the code is correct.
-Fingers crossed that everything works the way it should.
+this refactoring so it's not 100% guaranteed that the code is correct (though
+it doesn't appear to throw errors). Fingers crossed that everything works
+the way it should.
