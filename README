@@ -51,3 +51,5 @@ releasing to the public. The simulations haven't been thoroughly tested after
 this refactoring so it's not 100% guaranteed that the code is correct (though
 it doesn't appear to throw errors). Fingers crossed that everything works
 the way it should.
+
+The development of this code was supported by the Harvard Data Science Initiative.
