@@ -65,7 +65,7 @@ class MultiplePeriodicAggregate2D(nn.Module):
 
 if __name__ == '__main__':
     x = torch.randn(5, 3, 24, 24)
-    convL = torch.nn.Conv2d(3, 64, (3, 3), padding='same') 
+    convL = torch.nn.Conv2d(3, 64, (3, 3), padding='same', padding_mode='circular') 
     aggL = PeriodicAggregate2D((6,6))
     maggL = MultiplePeriodicAggregate2D(((6,6), (4,4)))
     y1 = convL(x)
