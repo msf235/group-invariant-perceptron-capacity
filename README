@@ -1,0 +1,52 @@
+Code for running simulations for the paper
+
+"Capacity of Group-invariant Linear Readouts from Equivariant Representations:
+How Many Objects can be Linearly Classified Under All Possible Views?",
+
+by Matthew Farrell, Blake Bordelon, Shubhendu Trivedi, and Cengiz Pehlevan.
+
+
+Note that the file models/vgg.py contains copyright statements for
+the original authors and modifiers of the script.
+
+The python packages used for the simulations are contained in
+environment.yml (this may include extra packages that are not necessary).
+
+
+To generate Figure 1, run
+
+python manifold_plots.py
+
+This script is fairly simple and self-explanatory.
+
+
+To generate Figures 2 and 3, run
+
+python plot_cnn_capacity.py
+
+At the bottom of the plot_cnn_capacity.py script, the plotting function
+is called for different panels. Comment out lines to generate specific
+figures. This script searches for a match with sets of parameters defined
+in cnn_capacity_params.py. To modify parameters used for simulations,
+modify the dictionaries in cnn_capacity_params.py or define your own
+parameter sets. For a description of different parameter options,
+see the docstring for the function cnn_capacity.get_capacity.
+
+The simulations take quite a lot of time to run, even
+with parallelization. Also a word of warning that
+the simulations take a lot of memory (~100GB for n_cores=5).
+To speed things up and reduce memory usage, one can set
+perceptron_style=efficient or pool_over_group=True, or reduce n_dichotomies.
+One can also choose to set seeds to seeds = [3] in plot_cnn_capacity.py.
+
+
+cnn_capacity_utils.py contains utility functions. The VGG model can be found
+in models/vgg.py. The direct sum (aka "grid cell") convolutional network model
+can be found in models/gridcellconv.py The code for generating datasets can be
+found in datasets.py.
+
+
+The code was modified and superficially refactored in preparation for
+releasing to the public. The simulations haven't been thoroughly tested after
+this refactoring so it's not 100% guaranteed that the code is correct.
+Fingers crossed that everything works the way it should.
